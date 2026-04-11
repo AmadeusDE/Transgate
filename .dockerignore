@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+
+# Go
+bin/
+transgate
+tmp_transgate
+obj/
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Config
+config.json
+config copy.json
+
+# Local brain (artifacts)
+.gemini/
+brain/

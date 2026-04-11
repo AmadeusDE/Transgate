@@ -1,0 +1,44 @@
+{
+  "lingua_weight": 0.3,
+  "llms": [
+    {
+      "name": "Gemini-Merger-and-Detector",
+      "type": "gemini",
+      "api_key": "$GEMINI_TOKEN",
+      "model": "gemini-3.1-flash",
+      "is_translator": true,
+      "is_detector": true,
+      "is_merger": true,
+      "weight": 0.8,
+      "prompts": {
+        "translate": "Translate the following strictly to %s from %s:\n%s",
+        "detect": "What language is this? Return JSON: {\"lang\": \"...\", \"confidence\": ...} for text:\n%s",
+        "merge": "Merge these translations: %s",
+        "explain": "Explain why these were translated differently: %s"
+      }
+    },
+    {
+      "name": "LiteLLM-Proxy",
+      "type": "openai",
+      "url": "http://your-litellm-proxy:4000/v1",
+      "api_key": "$LITELLM_KEY",
+      "model": "gpt-4o-mini",
+      "is_translator": true,
+      "is_detector": true,
+      "is_merger": false,
+      "weight": 0.6
+    },
+    {
+      "name": "Local-Ollama",
+      "type": "ollama",
+      "url": "http://localhost:11434",
+      "model": "llama3",
+      "is_translator": true,
+      "is_detector": true,
+      "is_merger": false,
+      "weight": 0.4
+    }
+  ],
+  "deeplx_url": "http://localhost:1188",
+  "libretranslate_url": "http://localhost:5000"
+}
