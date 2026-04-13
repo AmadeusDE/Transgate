@@ -31,7 +31,9 @@ go.work.sum
 # .idea/
 # .vscode/
 
-# transgate
+# Transgate binaries
+/transgate
+
+# Config files
 config.json
 config copy.json
-transgate
